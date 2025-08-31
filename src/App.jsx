@@ -1,10 +1,38 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const FetchButton = ({ fetchData }) => {
+  return (
+    <button onClick={fetchData}>Get a New Image</button>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  let gameID = 31540
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `https://www.cheapshark.com/api/1.0/games?title=batman`
+      );
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+      fetchData();
+  }, []);
 
   return (
     <>
@@ -18,15 +46,13 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <FetchButton fetchData={fetchData}/>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        {error}
       </p>
     </>
   )

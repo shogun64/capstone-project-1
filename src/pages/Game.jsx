@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
+import styles from "../styles/Game.module.css";
 
 function Game() {
     const { gameID } = useParams();
@@ -9,7 +10,7 @@ function Game() {
     if (error) return <p className="error">Error: {error}</p>;
 
     return (
-        <div>
+        <div className={styles.game}>
             <h1>{data.info.title}</h1>
         </div>
     )

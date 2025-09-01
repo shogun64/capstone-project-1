@@ -3,7 +3,7 @@ import styles from "../styles/IDBar.module.css";
 
 function IDBar({id, setID}) {
   return (
-    <div className={styles.idbar}>
+    <div className={styles.idBar}>
         <input
         type="text" placeholder="Game ID" value={id} onChange={(e) => setID(e.target.value)}/>
     </div>

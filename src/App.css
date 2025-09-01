@@ -8,6 +8,8 @@
   border-radius: 8px;
   border-color: black;
   border-width: 1px;
+  min-width: 800px;
+  min-height: 600px;
 }
 
 .logo {

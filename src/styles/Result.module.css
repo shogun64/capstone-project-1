@@ -1,0 +1,22 @@
+.result {
+    border-radius: 8px;
+    min-height: 150px;
+    background-color: lightblue;
+    margin: 20px;
+}
+
+.result h2{
+    margin: 10px;
+}
+
+.result img{
+    width: 50%;
+    height: 50px;
+    object-fit: contain;
+    align-self: center;
+}
+
+.result p{
+    margin: 0px;
+    font-size: 10px;
+}

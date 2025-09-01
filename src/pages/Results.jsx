@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SearchBar from "../components/SearchBar";
 import ResultsList from "../components/ResultsList";
 import useFetchData from "../hooks/useFetchData";
+import styles from "../styles/Results.module.css";
 
 function Results() {
     const [search, setSearch] = useState("")
@@ -13,7 +14,7 @@ function Results() {
     const resultsList = data
 
     return (
-        <div className='results'>
+        <div className={styles.results}>
             <SearchBar search={search} setSearch={setSearch}/>
             <ResultsList resultsList={resultsList}/>
         </div>

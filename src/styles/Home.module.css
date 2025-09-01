@@ -1,0 +1,12 @@
+.homebuttons {
+    margin: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gamebuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

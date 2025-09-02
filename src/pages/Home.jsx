@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 function Home() {
     const [id, setID] = useState("")
-
+    
     return (
         <div className={styles.home}>
             <h1>Hello! Welcome to the CheapShark game lookup!</h1>
